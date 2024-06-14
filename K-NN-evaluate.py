@@ -15,8 +15,8 @@ def load_and_preprocess_image(filepath, target_size=(64, 64)):
 # dog_images = ['path/to/dog/image1.jpg', 'path/to/dog/image2.jpg', ..., 'path/to/dog/image100.jpg']
 
 # データセットの作成
-cat_images = ['path/to/cat/image' + str(i) + '.jpg' for i in range(1, 101)]
-dog_images = ['path/to/dog/image' + str(i) + '.jpg' for i in range(1, 101)]
+cat_images = [f'.\\PetImages\\Cat\\{i}.jpg' for i in range(0, 100)]
+dog_images = [f'.\\PetImages\\Dog\\{i}.jpg' for i in range(0, 100)]
 
 X = []
 y = []
@@ -38,7 +38,7 @@ knn = KNeighborsClassifier(n_neighbors=k)
 knn.fit(X, y)
 
 # 新しい画像を分類
-new_image_path = 'path/to/new/dog_image.jpg'
+new_image_path = '.\\PetImages\\Cat\\50.jpg'
 new_image = load_and_preprocess_image(new_image_path)
 
 # 近傍点の取得
