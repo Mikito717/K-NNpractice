@@ -9,7 +9,7 @@ import cv2
 import datetime
 
 maxdata = 1000
-k_train=400
+k_train=1200
 # 画像をロードして前処理する関数
 def load_and_preprocess_image(filepath, size=(64, 64)):
     img = cv2.imread(filepath)
@@ -95,7 +95,7 @@ print(f'Accuracy: {currency}/{maxdata} = {currency/maxdata*100}%')
 test_results.append(["Accuracy", f"{currency}/{maxdata}", currency/maxdata*100])
 # CSVファイルを開く
 now=datetime.datetime.now()
-with open(f'test_results{now.strftime('%Y%m%d_%H%M%S')}.csv', 'w', newline='') as f:
+with open(f'test_results{now.strftime("%Y%m%d_%H%M%S")}.csv', 'w', newline='') as f:
     # CSVライターオブジェクトを作成
     writer = csv.writer(f)
 
